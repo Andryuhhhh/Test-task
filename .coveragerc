@@ -1,0 +1,16 @@
+[run]
+source = test_app
+omit =
+    */migrations/*
+    */tests/*
+    */__init__.py
+    */apps.py
+    */admin.py
+
+[report]
+show_missing = True
+skip_covered = True
+exclude_lines =
+    pragma: no cover
+    if __name__ == .__main__.:
+

@@ -1,0 +1,56 @@
+@baseUrl = http://localhost:8000/api
+
+###
+
+POST {{baseUrl}}/departments/
+Content-Type: application/json
+
+{
+  "name": "Engineering",
+  "parent": null
+}
+
+###
+
+POST {{baseUrl}}/departments/
+Content-Type: application/json
+
+{
+  "name": "Backend",
+  "parent": 1
+}
+
+###
+
+POST {{baseUrl}}/departments/1/employees/
+Content-Type: application/json
+
+{
+  "full_name": "Ivan Petrov",
+  "position": "Developer",
+  "hired_at": "2026-05-20"
+}
+
+###
+
+GET {{baseUrl}}/departments/1/?depth=2&include_employees=true
+Content-Type: application/json
+
+###
+
+PATCH {{baseUrl}}/departments/2/
+Content-Type: application/json
+
+{
+  "parent": null
+}
+
+###
+
+DELETE {{baseUrl}}/departments/2/?mode=cascade
+Content-Type: application/json
+
+###
+
+DELETE {{baseUrl}}/departments/2/?mode=reassign&reassign_to_department_id=1
+Content-Type: application/json

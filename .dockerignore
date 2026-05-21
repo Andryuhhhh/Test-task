@@ -1,0 +1,10 @@
+.git
+.idea
+.venv
+__pycache__
+*.pyc
+.pytest_cache
+.coverage
+.runserver.out.log
+.runserver.err.log
+postgres_data
